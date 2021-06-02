@@ -58,9 +58,9 @@ public class Main {
                 args = COMMA_SPLIT_PATTERN.split(config);
             }
 
-            final List<Container> containers = new ArrayList<Container>();
-            for (int i = 0; i < args.length; i++) {
-                containers.add(LOADER.getExtension(args[i]));
+            final List<Container> containers = new ArrayList<>();
+            for (String arg : args) {
+                containers.add(LOADER.getExtension(arg));
             }
             logger.info("Use container type(" + Arrays.toString(args) + ") to run dubbo serivce.");
 
